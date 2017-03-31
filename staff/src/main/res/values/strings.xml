@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_version">3.6</string>
+    <string name="getInvoiceRules_url">http://120.24.55.7:8888/staff/invoiceClaim/getInvoiceRules</string>
+    <string name="server_url">https://120.24.55.7:8447/staff/user/setPushInfo</string>
+    <string name="upload_url">http://120.24.55.7:8086/staff/activity/removeUploadPicOrVideo</string>
+    <string name="uploadVideo_url">http://120.24.55.7:8086/staff/activity/getActivityList</string>
+    <string name="uploadPDF_url">http://120.24.55.7:8888/staff/invoiceClaim/uploadInvoice</string>
+    <string name="app_name">#red-uat</string>
+    <!-- <string name="app_name">Green LaiSee uat</string> -->
+    <string name="csZbarScannerTitle"></string>
+    <string name="csZbarScannerInstructionss">Scan the Activation QR Code provided to you. Hold steady and keep the code within the four red corners.</string>
+    <string name="csZbarScannerInstructions">Place the QR code within the red corners to scan.</string>
+
+    <color name="csZbarScannerTextColor">#ffffff</color>
+    <color name="csZbarScannerTextBackground">#222</color>
+    <color name="csZbarScannerBackground">#000000</color>
+
+    <string name="app_description">VideoPlayback Sample Application</string>
+    <string name="button_start">Start</string>
+    <string name="menu_back">About</string>
+    <string name="menu_extended_tracking">Extended Tracking</string>
+    <string name="menu_flash">Flash</string>
+    <string name="menu_flash_error_on">Unable to turn on flash</string>
+    <string name="menu_flash_error_off">Unable to turn off flash</string>
+    <string name="menu_contAutofocus">Autofocus</string>
+    <string name="menu_contAutofocus_error_on">Unable to activate Continuous Auto-Focus</string>
+    <string name="menu_contAutofocus_error_off">Unable to deactivate Continuous Auto-Focus</string>
+    <string name="menu_playFullscreenVideo">Play Fullscreen</string>
+    <string name="menu_camera">CAMERA</string>
+    <string name="menu_camera_front">Front</string>
+    <string name="menu_camera_back">Rear</string>
+    <string name="ok">OK</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="exit">Exit</string>
+    <string name="download">Download</string>
+    <string name="update_fail_msg">Get latest update failed</string>
+    <string name="ar_discription">Scan objects with this icon to discover additional information.</string>
+    <string name="update_download_msg">App Update downloading. Please do not close the app or turn off your device.</string>
+    <string name="app_update_msg">Changes have been made to the #red app that require you to update the app before continuing.</string>
+    <string name="client_pack_download_alert">To continue using the #red app, you must download an %size% MB update. We have detected that you are not connected to WiFi, so the download will take longer and use your mobile data plan. If you do not wish to download it now, please close this app until you are connected to WiFi.</string>
+    <string name="networkError">Network connection error</string>
+    <string name="networkErrorMessage">Please check your internet connection or try again later.</string>
+    <string name="notSupported">App support error</string>
+    <string name="notSupportedMessage">Your current region does not support this app version. Please check for updates.</string>
+    <string name="page_back_func">Hsbc.mobile.fn.androidBack()</string>
+    <string name="native_app_header">staff-red-v%s</string>
+    <string name="device_type_header">Android %s</string>
+    <!-- production -->
+    <string name="local_host_url">http://127.0.0.1:8088</string>
+    <string name="local_host_port">8088</string>
+
+    <bool name="standalone_mode">false</bool>
+    <bool name="local_mode">false</bool>
+    <!-- <string name="config_url">http://reddownload.oss-cn-shenzhen.aliyuncs.com/PROD/red/v2.0/STAConfig-android.txt</string>
+         <string name="config_url">http://reddownload.oss-cn-shenzhen.aliyuncs.com/PROD/red/v3.7/STAConfig-android.txt</string>
+       -->
+       <string name="config_url">https://120.24.55.7:8443/download1/beta-android.txt</string>
+   <!--<string name="config_url">http://120.24.55.7:8086/download/beta-android.txt</string>-->
+    <string name="ar_titile">Scan</string>
+    <string name="image">图片</string>
+    <string name="all_image">所有图片</string>
+    <string name="preview">selected</string>
+    <string name="msg_no_camera">无法启用系统相机</string>
+    <string name="msg_amount_limit">已经达到最高选择数量</string>
+    <string name="done">完成</string>
+    <string name="done_with_count">完成(%1$d/%2$d)</string>
+    <string name="image_index">%1$d/%2$d</string>
+    <string name="delete">删除</string>
+    <string name="deleted_a_photo">删除了一张图片</string>
+    <string name="confirm_to_delete">确认删除？</string>
+    <string name="yes">确定</string>
+
+<!--    <string name="cancel">取消</string>-->
+    <string name="undo">撤消</string>
+    <string name="face_member">Scan a MANCO member and keep your camera steady</string>
+    <string name="face_laiseer">Green Laisee</string>
+    <string name="face_recog">Recognizing...</string>
+    <string name="choosepdf">Select PDF file </string>
+
+    <string name="networkerror">Networking failed, upload failed </string>
+
+    <string name="inputusername">enter one user name </string>
+
+    <string name="inputinvoice">Please enter the invoice number </string>
+
+    <string name="inputexpenseNo">Please enter the DOA number </string>
+
+    <string name="doawrong">DOA number format is wrong </string>
+
+    <string name="doaForm">DOA initials must be E or D </string>
+
+    <string name="choosepdfSize">Please select less than 2 megabytes of PDF file</string>
+
+    <string name="inputremarks">Please enter remarks</string>
+
+</resources>

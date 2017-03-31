@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_version">3.5</string>
+	<string name="server_url">https://120.24.55.7:8447/staff/user/setPushInfo</string>
+	<string name="upload_url">http://120.24.55.7:8086/staff/activity/</string>
+	<string name="uploadVideo_url">http://120.24.55.7:8086/staff/activity/</string>
+	<string name="uploadPDF_url">http://120.24.55.7:8086/staff/invoiceClaim/uploadInvoice</string>
+	<string name="uploadIcon_url">http://120.24.55.7:8086/staff/myCorner/updatePhoto</string>
+	<string name="app_name">#red-sit</string>
+	<string name="local_host_url">http://127.0.0.1:8080</string>
+	<string name="local_host_port">8080</string>
+	<!--<string name="config_url">http://120.24.55.7:8086/download/beta-android.txt</string>-->
+	<string name="config_url">https://120.24.55.7:8443/download1/beta-android.txt</string>
+	<string name="getInvoiceRules_url">http://120.24.55.7:8888/staff/invoiceClaim/getInvoiceRules</string>
+</resources>

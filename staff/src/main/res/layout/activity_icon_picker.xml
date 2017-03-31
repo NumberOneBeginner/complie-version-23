@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#f26647" />
+
+    <RelativeLayout
+        android:id="@+id/icon_rl"
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:background="#f26647" >
+
+        <TextView
+            android:id="@+id/icon_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="All Images"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/icon_arrowdown"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/icon_title_tv"
+            android:src="@drawable/arrowdown" />
+
+        <ImageView
+            android:id="@+id/backIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="-6dp"
+            android:contentDescription="@null"
+            android:src="@drawable/back2" />
+ 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/backIcon"
+            android:text="图片"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/icon_arrowup"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/icon_title_tv"
+            android:src="@drawable/arrowup"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+            <GridView
+                android:id="@+id/grid_icon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#ffffff"
+                android:horizontalSpacing="4dp"
+                android:verticalSpacing="1dp"
+                android:clipToPadding="false"
+                android:paddingTop="3dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="5dp"
+                android:scrollbars="none"
+                 >
+            </GridView>
+
+
+<!--    
+                android:columnWidth="@dimen/image_size"
+ <RelativeLayout
+        android:id="@+id/icon_picker_footer"
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:layout_alignParentBottom="true"
+        android:background="#7ff26647"
+        android:minHeight="?android:attr/actionBarSize" >
+
+        <Button
+            android:id="@+id/btn_icon_Album"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center"
+            android:textColor="@color/action_text_color"
+            android:textSize="@dimen/action_text_size" />
+
+        <Button
+            android:id="@+id/btn_icon_Preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:enabled="false"
+            android:gravity="center"
+            android:paddingLeft="10dip"
+            android:text="0/9 Selected"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/action_text_size" />
+    </RelativeLayout>
+--> 
+</LinearLayout>

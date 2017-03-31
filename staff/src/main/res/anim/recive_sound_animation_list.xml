@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false" >
+
+    <rotate
+        android:duration="3000"
+        android:fromDegrees="0"
+        android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="+350" />
+    <item android:drawable="@drawable/recive_sound_img1" android:duration="300" />
+    <item android:drawable="@drawable/recive_sound_img2" android:duration="300" />
+    <item android:drawable="@drawable/recive_sound_img3" android:duration="300" />
+    <item android:drawable="@drawable/recive_sound_img4" android:duration="300" />
+</animation-list>
+
+    
+

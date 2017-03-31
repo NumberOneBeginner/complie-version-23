@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/relativelayout_whole"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/relativelayout_whole"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="#f26647" />
+         <!--   
+      --> 
+        <RelativeLayout
+            android:id="@+id/arHeaderBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="top"
+            android:background="#f26647" >
+
+        <ImageView
+            android:id="@+id/arBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="-6dp"
+            android:background="@drawable/back2" />
+
+        <TextView
+            android:id="@+id/scan_discover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="5dp"
+            android:text="@string/ar_titile"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
+  </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearyLayoutlll"
+        android:layout_width="match_parent"
+        android:layout_height="80dip"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="#f26647"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout_Qrcode"
+            android:layout_width="match_parent"
+            android:layout_height="80dip"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tv_Qrcode"
+                android:layout_width="65dip"
+                android:layout_height="60dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dip"
+                android:gravity="bottom"
+                android:paddingLeft="6dip"
+                android:text="QR code "
+                android:textColor="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/btn1"
+                android:layout_width="45dp"
+                android:layout_height="42dip"
+                android:layout_alignTop="@+id/tv_Qrcode"
+                android:layout_centerHorizontal="true"
+                android:background="#f26647"
+                android:src="@drawable/qr_logo" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/RelativeLayout_Discover"
+            android:layout_width="match_parent"
+            android:layout_height="80dip"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/tv_Discover"
+                android:layout_width="80dp"
+                android:layout_height="60dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dip"
+                android:gravity="bottom"
+                android:paddingLeft="13dip"
+                android:text="Discovery"
+                android:textColor="#FFFFFF" />
+
+            <ImageView
+                android:id="@+id/btn2"
+                android:layout_width="45dp"
+                android:layout_height="50dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dip"
+                android:background="#f26647"
+                android:src="@drawable/ar_logo_animated" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

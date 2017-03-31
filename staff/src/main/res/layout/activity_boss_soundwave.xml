@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/boss_soundwave_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/green_laisee_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dip" >
+
+        <Button
+            android:id="@+id/home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:background="@drawable/cloud_normal"
+            android:scaleType="matrix"
+            android:text="Home"
+            android:textColor="#29abe2" />
+
+        <FrameLayout
+            android:id="@+id/tab_diver_framelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="-15dip"
+            android:layout_toLeftOf="@+id/tab_collect_framelayout" >
+
+            <ImageButton
+                android:id="@+id/tab_deliver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center"
+                android:onClick="onTabSelect"
+                android:src="@drawable/sound_wave_cloud_seletor"
+                android:text="Deliver"
+                android:textColor="@drawable/sound_wave_cloud_text_selector" >
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/tab_deliver_tv"
+                style="@style/cloudtv_select_style"
+                android:text="Deliver" >
+            </TextView>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/tab_collect_framelayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" >
+
+            <ImageButton
+                android:id="@+id/tab_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="center"
+                android:onClick="onTabSelect"
+                android:scaleType="matrix"
+                android:src="@drawable/sound_wave_cloud_seletor"
+                android:text="Collect"
+                android:textColor="@drawable/sound_wave_cloud_text_selector" />
+
+            <TextView
+                android:id="@+id/tab_collect_tv"
+                style="@style/cloudtv_select_style"
+                android:text="Collect" >
+            </TextView>
+        </FrameLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</RelativeLayout>

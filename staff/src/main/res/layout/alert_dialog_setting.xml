@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <!--
+     android:layout_marginLeft="15dip"
+        android:layout_marginRight="15dip"
+    -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/content_c"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/message"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dip"
+                android:gravity="center_horizontal"
+                android:text="Settings"
+                android:textColor="#7ac943"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dip"
+            android:layout_marginRight="15dip"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/amoutGreenLiasee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount of each green laisee:"
+                    android:textColor="#676767" />
+
+                <!-- com.none.staff.CustomLineEditText -->
+
+                <EditText
+                    android:id="@+id/et_amount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dip"
+                    android:layout_toRightOf="@+id/amoutGreenLiasee"
+                    android:background="@drawable/edittext_bg"
+                    android:gravity="right|center"
+                    android:hint="Please input"
+                    android:inputType="number"
+                    android:textColor="#000000" />
+            </RelativeLayout>
+
+         <!--   <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip" >
+
+                <TextView
+                    android:id="@+id/laiseeNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:text="No. of laisees per connection:"
+                    android:textColor="#676767" />
+
+               
+                      <com.none.staff.CustomLineEditText
+                    android:id="@+id/et_nooflaisee"
+                    android:layout_toRightOf="@+id/laiseeNo"
+                    android:gravity="right|center"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dip"
+                    android:background="@null"
+                    android:hint="Please input"
+                    android:textColor="#000000"
+                     android:inputType="number"
+                    gaosai:line_color="#7ac943"
+                    gaosai:line_height="2dip" />
+               
+
+                <EditText
+                    android:id="@+id/et_nooflaisee"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:layout_marginTop="10dip"
+                    android:layout_toRightOf="@+id/laiseeNo"
+                    android:background="@drawable/edittext_bg"
+                    android:gravity="right|center"
+                    android:hint="Please input"
+                    android:inputType="number"
+                    android:textColor="#000000" />
+            </RelativeLayout> 
+             -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:paddingBottom="1dip"
+            android:paddingTop="1dip" >
+
+            <Button
+                android:id="@+id/dialog_btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/setting_alertdialog_button_selector"
+                android:text="Cancel"
+                android:textColor="@color/setting_alertdialog_normalbt" />
+
+            <Button
+                android:id="@+id/dialog_btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dip"
+                android:background="@drawable/setting_alertdialog_savebutton_selector"
+                android:text="Save"
+                android:textColor="@color/setting_alertdialog_pressedbt" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

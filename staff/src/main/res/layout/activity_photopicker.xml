@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ResourceName" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="#f26647" />
+<!--   -->
+
+    <RelativeLayout
+        android:id="@+id/common_rl"
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:background="#f26647" >
+
+        <TextView
+            android:id="@+id/main_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="All Images"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/arrowdown"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/main_title_tv"
+            android:src="@drawable/arrowdown" />
+
+        <ImageView
+            android:id="@+id/backImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="-6dp"
+            android:contentDescription="@null"
+            android:src="@drawable/back2" />
+
+        <Button
+            android:id="@+id/nextbutton_right"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignBaseline="@+id/main_title_tv"
+            android:layout_alignBottom="@+id/main_title_tv"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="23dp"
+            android:background="@null"
+            android:contentDescription="@null"
+            android:enabled="false"
+            android:text="Next"
+            android:textColor="@color/nextbutton_beckground"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/arrowup"
+            android:layout_width="20dp"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/arrowdown"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/arrowup"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:horizontalSpacing="4dp"
+        android:verticalSpacing="1dp"
+        android:clipToPadding="false"
+        android:paddingTop="3dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="5dp"
+        android:scrollbars="none" />
+
+    <RelativeLayout
+        android:id="@+id/photo_picker_footer"
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:layout_alignParentBottom="true"
+        android:background="#7ff26647"
+        android:minHeight="?android:attr/actionBarSize" >
+
+        <Button
+            android:id="@+id/btnAlbum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center"
+            android:textColor="@color/action_text_color"
+            android:textSize="@dimen/action_text_size" />
+
+        <Button
+            android:id="@+id/btnPreview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:enabled="false"
+            android:gravity="center"
+            android:paddingLeft="10dip"
+            android:text="0/9 Selected"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/action_text_size" />
+    </RelativeLayout>
+
+</LinearLayout>

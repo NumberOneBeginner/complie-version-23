@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/csZbarScannerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:id="@+id/csZbarScannerOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/qrscan"></RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp">
+
+            <TextView
+                android:id="@+id/csZbarScannerInstructions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:paddingLeft="15dip"
+                android:paddingRight="10dip"
+                android:text="@string/csZbarScannerInstructions"
+                android:textColor="#FFF"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/ar_logo"
+                android:layout_width="50dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/qr_logo" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>

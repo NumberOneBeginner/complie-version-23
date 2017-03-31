@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/cloudAndSon_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-50dip"
+        android:src="@drawable/green_laisee_sun" />
+
+    <com.none.staff.view.SoundWaveBackground
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:rb_color="#f7931e"
+        app:rb_duration="3000"
+        app:rb_radius="32dp"
+        app:rb_rippleAmount="6"
+        app:rb_scale="6" >
+
+        <FrameLayout
+            android:id="@+id/fl_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" >
+
+            <com.none.staff.view.CircleProgressButton
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/foundDevice"
+                android:layout_width="180dip"
+                android:layout_height="180dip"
+                android:background="@drawable/circle_bg"
+                app:Inside_Interval="14dip"
+                app:Paint_Color="0xffffffff"
+                app:Paint_Width="3dip"
+                app:fill="false" >
+            </com.none.staff.view.CircleProgressButton>
+
+            <ImageView
+                android:id="@+id/restart"
+                android:layout_width="100dip"
+                android:layout_height="100dip"
+                android:layout_gravity="center"
+                android:src="@drawable/reload"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/start_sound_ani"
+                android:layout_width="100dip"
+                android:layout_height="100dip"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/start_sound_ani_button"
+                android:layout_width="100dip"
+                android:layout_height="100dip"
+                android:layout_gravity="center"
+                android:background="@drawable/audio_start" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/all_waring_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fl_circle"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/send_laisee_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click now"
+                android:textColor="#7ac943"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/below_send_laisee_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="to give laisees"
+                android:textColor="#000000" />
+
+            <LinearLayout
+                android:id="@+id/sound_wave_waring_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:id="@+id/waring_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/waring_icon" />
+
+                <TextView
+                    android:id="@+id/waring_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dip"
+                    android:text="You do not have enough balance"
+                    android:textColor="#db0011" />
+            </LinearLayout>
+        </LinearLayout>
+        <!-- 已发送派利的声波 -->
+
+        <RelativeLayout
+            android:id="@+id/havesent_laisee_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/send_right" />
+
+                <TextView
+                    android:id="@+id/hassent_laisee_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/simple_bule"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/end_game_waring_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/yellow_waring_icon" />
+
+                    <TextView
+                        android:id="@+id/end_game_waringtv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="10dip"
+                        android:text="You have onle less than 100 HKD left."
+                        android:textColor="#f7931e" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- 弹出send界面 -->
+
+        <RelativeLayout
+            android:id="@+id/boss_show_send_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:visibility="gone"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Send laisee to"
+                    android:textColor="@color/simple_black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/send_to_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="David D W Chen"
+                    android:textColor="@color/simple_bule"
+                    android:textSize="18sp" />
+
+                <RelativeLayout
+                    
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal" >
+
+                    <LinearLayout
+                        android:id="@+id/boss_send_buttons_ll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="15dip"
+                        android:orientation="horizontal" >
+
+                        <Button
+                            android:id="@+id/boss_send_cancel_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/boss_senddialog_cancle_selector"
+                            android:text="Cancel"
+                            android:textColor="@color/setting_alertdialog_normalbt" />
+
+                        <Button
+                            android:id="@+id/boss_send_send_button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dip"
+                            android:background="@drawable/boss_senddialog_send_selector"
+                            android:text="Send"
+                            android:textColor="@color/simple_bule" />
+                    </LinearLayout>
+
+                    <com.none.staff.view.MyProgressBar
+                        android:visibility="invisible"
+                        android:id="@+id/boss_send_laisee_progressbar"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:layout_centerVertical="true"
+                        android:src="@anim/progress_anim" />
+                </RelativeLayout>
+            </LinearLayout>
+            
+        </RelativeLayout>
+        
+         <LinearLayout
+            android:id="@+id/alert_ops_timeout_result_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:visibility="gone"
+             >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/collect_result_tree" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:text="Oops!"
+                android:textColor="#7ac943"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/boss_ops_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Timeout! Please review the sending result in My Laisee later."
+                android:textColor="@color/setting_alertdialog_normalbt"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/deliver_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+        </LinearLayout>
+    </com.none.staff.view.SoundWaveBackground>
+
+    <ImageButton
+        android:id="@+id/deliver_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dip"
+        android:background="@null"
+        android:src="@drawable/green_home_setting" />
+
+</RelativeLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/csZbarScannerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/csZbarScannerBackground" >
+
+    <RelativeLayout
+        android:id="@+id/csZbarScannerOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/csZbarScannerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/csZbarScannerTextBackground" 
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/csZbarScannerCloseButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/close_btn" >
+            </Button>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/csZbarScannerInstructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/csZbarScannerTextBackground"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_horizontal"
+            android:paddingBottom="80dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="25dp"
+            android:text="@string/csZbarScannerInstructions"
+            android:textColor="@color/csZbarScannerTextColor"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/csZbarScannerInstructions"
+            android:layout_below="@id/csZbarScannerTitle"
+            android:layout_gravity="center_horizontal" >
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="40dp"
+                android:src="@drawable/camera_target_red" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="40dp"
+                android:rotation="90"
+                android:src="@drawable/camera_target_red" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="40dp"
+                android:rotation="270"
+                android:src="@drawable/camera_target_red" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="40dp"
+                android:rotation="180"
+                android:src="@drawable/camera_target_red" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>

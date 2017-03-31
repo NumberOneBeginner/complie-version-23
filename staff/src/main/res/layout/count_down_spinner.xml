@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hsbc.greenpacket.view.CountDownWidget xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/count_down_widget"
+    android:layout_width="@dimen/count_down_counter_height"
+    android:layout_height="@dimen/count_down_counter_height"
+    android:layout_gravity="center_vertical|center_horizontal" 
+    android:background="#00000000">
+
+    <com.hsbc.greenpacket.view.CountDownView
+        android:id="@+id/count_down_view"
+        android:layout_width="@dimen/count_down_counter_height"
+        android:layout_height="@dimen/count_down_counter_width"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+    </com.hsbc.greenpacket.view.CountDownView>
+
+    <ImageView
+        android:id="@+id/number_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" 
+        android:src="@drawable/countdown_3"
+        android:scaleType="centerInside"/>
+
+</com.hsbc.greenpacket.view.CountDownWidget>

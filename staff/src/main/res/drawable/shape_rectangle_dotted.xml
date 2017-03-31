@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+    <solid android:color="@color/uploadDisEnable"/>
+    <stroke
+        android:width="1dp"
+        android:color="@color/gray_color_rank"
+        android:dashWidth="3dp"
+        android:dashGap="1pt"/>
+</shape>

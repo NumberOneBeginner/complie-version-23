@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="ResourceName" >
+
+    <uk.co.senab.photoview.PhotoView
+        android:id="@+id/iv_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/photo_picker_footer"
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:layout_alignParentBottom="true"
+        android:alpha="50"
+        android:background="#F9563A" >
+
+        <TextView
+            android:id="@+id/checkmark_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:gravity="center"
+            android:paddingLeft="10dip"
+            android:text="Selected"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/action_text_size" />
+
+        <TextView
+            android:id="@+id/checkmark_select"
+            android:layout_width="60dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Select"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/action_text_size" />
+
+        <ImageView
+            android:id="@+id/checkmark_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:layout_toLeftOf="@id/checkmark_select"
+            android:src="@drawable/btn_unselected" />
+    </RelativeLayout>
+
+</LinearLayout>

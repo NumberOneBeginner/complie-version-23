@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.none.staff"
+    android:hardwareAccelerated="true"
+    android:versionCode="100000"
+    android:versionName="@string/app_version"
+    android:windowSoftInputMode="adjustPan">
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <!--
+         The application requires a camera.
+
+         NOTE: Any application that requests the CAMERA permission but does not
+         declare any camera features with the <uses-feature> element will be
+         assumed to use all camera features (auto-focus and flash). Thus, the
+         application will not be compatible with devices that do not support
+         all camera features. Please use <uses-feature> to declare only the
+         camera features that your application does need. For instance, if you
+         request the CAMERA permission, but you do not need auto-focus or
+         flash, then declare only the android.hardware.camera feature. The
+         other camera features that you do not request will no longer be
+         assumed as required.
+    -->
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <!-- end jammy changed for hsbc150 -->
+
+ <uses-permission android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.none.staff" />
+
+
+<permission
+        android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.none.staff"
+        android:protectionLevel="normal" >
+    </permission>
+
+<uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <!-- 富媒体需要声明的权限 -->
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    
+
+
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- <uses-permission android:name="android.permission.INSTALL_PACKAGES"/> -->
+    <uses-permission android:name="android.permission.INSTALL_PACKAGES" />
+    <uses-permission android:name="android.hardware.sensor.accelerometer" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 往SDCard写入数据权限 -->
+    <!-- <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> -->
+    <!-- 必须的权限声明 over -->
+
+
+    <!-- Add this permission to get access to the camera. -->
+    <uses-permission android:name="cn.bong.android.permission.EVENT" />
+    <!-- Add this permission to get access to the camera. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+
+    <!-- android:debuggable="false" -->
+    <application
+        android:name="com.none.staff.activity.StaffApplication"
+        android:debuggable="true"
+        android:largeHeap="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:logo="@drawable/screen"
+        >
+        <!--android:debuggable="true"-->
+        <activity android:name="com.hsbc.share.WebviewActivity"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTop">
+        </activity>
+        <activity
+            android:name="com.none.staff.activity.staff"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme">
+        </activity>
+        <!--android:theme="@style/testAppsTheme"-->
+        <activity
+            android:launchMode="singleTask"
+            android:name="com.none.staff.activity.Sp"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="application/pdf"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.none.staff.activity.OnboardingActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <!--android:theme="@android:style/Theme.Black.NoTitleBar"-->
+        <!--
+
+          NOTE: The values in 'android:configChanges' ensure that Android will 
+          not destroy and re-create the activity when the user flips the 
+          keyboard, changes the orientation of the device, or the actual or 
+          physical screen resolution changes, but calls the Activity's 
+          onConfigurationChanged() function instead.
+
+          NOTE 2: In order to prevent automatic reactions to orientation
+          changes in addition to setting proper values for
+          'android:configChanges', you also must explicitly specify the screen
+          orientation used by the application, either by setting the attribute
+          'android:screenOrientation' or in code by calling
+          Activity.setRequestedOrientation().
+
+        -->
+        <!-- Splash Screen Activity -->
+
+        <activity
+            android:name="com.vuforia.VideoPlayback.app.VideoPlayback.VideoPlayback"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="user"
+            android:theme="@style/SampleAppsTheme" />
+        <!-- android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize" -->
+        <!-- This is the activity that holds the full screen media player. -->
+        <activity
+            android:name="com.vuforia.VideoPlayback.app.VideoPlayback.FullscreenPlayback"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.cloudsky.cordovaPlugins.ZBarScannerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="com.hsbc.greenpacket.activities.MainBrowserActivity"
+            android:exported="false"
+            android:hardwareAccelerated="true"
+            android:label="@string/app_name"
+            android:launchMode="standard"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.none.staff.activity.AboutActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.none.staff.activity.BossSoundwaveActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.none.staff.activity.StaffSoundWaveActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.none.Push.uploadImage.PhotoPickerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme"/>
+        <activity android:name="com.none.Push.uploadImage.UploadActivity"
+            android:windowSoftInputMode="adjustUnspecified|adjustPan"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name="com.none.Push.uploadImage.PhotoPreviewActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name="com.none.Push.uploadVideo.VideoPickerActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme"/>
+        <activity android:name="com.none.Push.uploadVideo.UploadVideoActivity"
+            android:windowSoftInputMode="adjustUnspecified|adjustPan"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity android:name="com.none.Push.uploadVideo.VideoPreviewActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <service
+            android:name="com.estimote.sdk.service.BeaconService"
+            android:exported="false" />
+        <service android:name="com.none.staff.network.ReceiveMsgService" />
+
+        <!-- palyvideo -->
+
+        <activity
+            android:name="com.none.PlayVideo.playActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+        <activity android:name="com.hsbc.share.ShareMainActivity"
+            android:windowSoftInputMode="adjustUnspecified|adjustPan"
+            android:theme="@style/AppTheme"
+            android:launchMode="singleTop">
+
+        </activity>
+        <!-- Push -->
+        <!--设置软键盘弹出时布局弹上去-->
+        <!--android:windowSoftInputMode="stateVisible|adjustResize"
+          android:windowSoftInputMode="adjustUnspecified|adjustPan"
+            android:theme="@style/Anima"-->
+
+        <receiver android:name="com.none.Push.MyPushMessageReceiver" >
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.baidu.android.pushservice.PushServiceReceiver"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.baidu.android.pushservice.RegistrationReceiver"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.none.Plugin.AlarmClock.AlarmReceiver" />
+
+        <service
+            android:name="com.baidu.android.pushservice.PushService"
+            android:exported="true"
+            android:process=":bdservice_v1" >
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.baidu.android.pushservice.CommandService"
+            android:exported="true" />
+
+        <meta-data
+            android:name="api_key"
+            android:value="${hsbc.red.push.key}"/>
+
+        <!-- Fjh60FPCW0dG2q9UsWkGP7LN -->
+        <activity android:name="com.none.staff.activity.zbarScanner.TestView"
+            android:theme="@style/AppTheme">
+        </activity>
+        <!-- android:theme="@style/AnimaStaff" -->
+        <activity
+            android:name="com.none.staff.activity.OpenglActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Anima" >
+        </activity>
+        <!--<activity-->
+            <!--android:name="com.none.staff.activity.FaceDetectionActivity"-->
+            <!--android:screenOrientation="portrait" >-->
+        <!--</activity>-->
+
+        <activity
+            android:name="com.none.staff.uploadIcon.IconUpLoadActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+           
+        </activity>
+        
+          <activity
+            android:name="com.none.staff.uploadIcon.IconUpLoadPickerActivity"
+              android:theme="@style/AppTheme">
+             
+        </activity>
+        <activity android:name="com.none.staff.uploadIcon.IconPreviewActivity"
+            android:theme="@style/AppTheme">
+            
+        </activity>
+        <!-- end -->
+    </application>
+
+</manifest>

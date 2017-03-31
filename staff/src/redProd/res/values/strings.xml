@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_version">3.7</string>
+	<string name="server_url">https://120.24.70.17:8443/staff/user/setPushInfo</string>
+	<string name="upload_url">http://120.24.70.17:8080/staff/activity/</string>
+	<string name="uploadVideo_url">http://120.24.70.17:8080/staff/activity/</string>
+	<string name="uploadPDF_url">http://120.24.70.17:8080/staff/invoiceClaim/uploadInvoice</string>
+	<string name="uploadIcon_url">http://120.24.70.17:8080/staff/myCorner/updatePhoto</string>
+	<string name="app_name">#red</string>
+	<string name="local_host_url">http://127.0.0.1:8080</string>
+	<string name="local_host_port">8080</string>
+	<string name="config_url">http://reddownload.oss-cn-shenzhen.aliyuncs.com/PROD/red/v3.7/STAConfig-android.txt</string>
+	<string name="getInvoiceRules_url">http://120.24.55.7:8888/staff/invoiceClaim/getInvoiceRules</string>
+</resources>
