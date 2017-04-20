@@ -8,6 +8,7 @@ import net.sourceforge.zbar.ImageScanner;
 import net.sourceforge.zbar.Symbol;
 import net.sourceforge.zbar.SymbolSet;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.hardware.Camera;
@@ -16,6 +17,7 @@ import android.hardware.Camera.PreviewCallback;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -135,9 +137,9 @@ implements SurfaceHolder.Callback {
 			camera = Camera.open();
 		} catch (Exception e){
 			die("Error: Could not open the camera.");
+//			finish();
 			return;
 		}
-
 		tryStartPreview();
 	}
 
@@ -349,4 +351,5 @@ implements SurfaceHolder.Callback {
 		getWindow().setAttributes(p);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 	}
+
 }

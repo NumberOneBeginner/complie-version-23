@@ -389,7 +389,7 @@ public class VideoPickerActivity extends FragmentActivity{
 		int cols = getNumColnums();
 		int screenWidth = getResources().getDisplayMetrics().widthPixels;
 		int columnSpace = getResources().getDimensionPixelOffset(R.dimen.space_size);
-		return (screenWidth - columnSpace * (cols-1)) / cols;
+		return (screenWidth - columnSpace * (cols-1)-10) / cols;
 	}
 
 	/**

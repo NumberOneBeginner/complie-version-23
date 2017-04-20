@@ -41,8 +41,8 @@ public class BackWebView extends CordovaWebView {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event)  {
 	    if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) { //按下的如果是BACK，同时没有重复
-	       Toast.makeText(this.getContext(),"点击了返回按钮",1).show();
-	       this.loadUrl("javascript:newChangePage()");
+//	       Toast.makeText(this.getContext(),"点击了返回按钮",1).show();
+//	       this.loadUrl("javascript:showBack()");
 	        return true;
 	    }
 

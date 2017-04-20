@@ -97,15 +97,6 @@ public class staff extends CordovaActivity {
 			getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 //		}
-
-//		if (Build.VERSION.SDK_INT >= 21) {
-//			full(false);
-//			 this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//		}else{
-			//除去状态栏
-//	        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//	        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//		}
 		//根据获取到的设备的NavigationBar的高度为DecorView设置下边距
 		getWindow().getDecorView().findViewById(android.R.id.content)
 				.setPadding(0, 0, 0, getNavigationBarHeight());
@@ -115,8 +106,8 @@ public class staff extends CordovaActivity {
 		StaffApplication application = (StaffApplication) getApplication();
 		application.getActivityStack().put(String.valueOf(this.hashCode()), this);
 		this.root.setBackgroundResource(R.drawable.screen);
-//		super.init();
-		this.init();
+		super.init();
+//		this.init();
         AndroidBug5497Workaround.assistActivity(this);
 		loga();
 		displaySplash();
@@ -367,18 +358,18 @@ public class staff extends CordovaActivity {
 //	}
 	
 	
-	 @Override
-	    public void init() {
-//	        只是把源码中的CordovaWebView换成NobackWebView，其他还是源码
-	        CordovaWebView webView = new BackWebView(this);
-//	        super.init(webView, makeWebViewClient(webView), makeChromeClient(webView));
-	        CordovaWebViewClient webViewClient;
-	        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
-	            webViewClient = new CordovaWebViewClient(this, webView);
-	        } else {
-	            webViewClient = new IceCreamCordovaWebViewClient(this, webView);
-	        }
-	        this.init(webView, webViewClient,
-	                new CordovaChromeClient(this, webView));
-	    }
+//	 @Override
+//	    public void init() {
+////	        只是把源码中的CordovaWebView换成NobackWebView，其他还是源码
+//	        CordovaWebView webView = new BackWebView(this);
+////	        super.init(webView, makeWebViewClient(webView), makeChromeClient(webView));
+//	        CordovaWebViewClient webViewClient;
+//	        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+//	            webViewClient = new CordovaWebViewClient(this, webView);
+//	        } else {
+//	            webViewClient = new IceCreamCordovaWebViewClient(this, webView);
+//	        }
+//	        this.init(webView, webViewClient,
+//	                new CordovaChromeClient(this, webView));
+//	    }
 }

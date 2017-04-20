@@ -12,6 +12,7 @@ package com.none.Plugin.ar;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
 import android.widget.TextView;
@@ -66,7 +67,12 @@ public class PlayBackPlugin extends CordovaPlugin {
 	@Override
 	public void onActivityResult(int requestCode,int resultCode,Intent intent){
 		super.onActivityResult(requestCode, resultCode, intent);
-		callbackContext.success();
+		if (resultCode== Activity.RESULT_OK){
+			callbackContext.success();
+		}else {
+			callbackContext.error("No camera privileges");
+		}
+
 	}
 
 	public void onEvent(AnyEventType event) {

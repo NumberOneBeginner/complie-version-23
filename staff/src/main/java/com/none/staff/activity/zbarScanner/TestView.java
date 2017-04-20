@@ -8,11 +8,22 @@ import com.vuforia.VideoPlayback.app.VideoPlayback.VideoPlayback;
 
 import de.greenrobot.event.EventBus;
 
+import android.Manifest;
 import android.app.ActivityGroup;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.hardware.Camera;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,6 +35,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TestView  extends ActivityGroup implements OnClickListener{
 
@@ -61,20 +73,28 @@ public class TestView  extends ActivityGroup implements OnClickListener{
 		EventBus.getDefault().register(this);
 		initViews();
 		setListener();
+		if (isCameraCanUse()) {
 
-		btn2.setAlpha(0.5f);
-		tv_Discover.setAlpha(0.5f);
+			//跳转到相关的拍照/扫描 页面
+			btn2.setAlpha(0.5f);
+			tv_Discover.setAlpha(0.5f);
 
-		container.addView(
-				getLocalActivityManager().startActivity(
-						"Module1",
-						new Intent(TestView.this, ZBarScannerActivity.class)
-						.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-						.getDecorView());
+			container.addView(
+					getLocalActivityManager().startActivity(
+							"Module1",
+							new Intent(TestView.this, ZBarScannerActivity.class)
+									.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+							.getDecorView());
+
+		} else {
+
+			//当前APP没有摄像头权限弹层，或者其他相关提示
+			createPermissionDialog();
+		}
+
 	}
 
 	private void setListener() {
-
 		arBackButton.setOnClickListener(this);
 		scan_discover.setOnClickListener(this);
 		RelativeLayout_Qrcode.setOnClickListener(this);
@@ -196,7 +216,7 @@ public class TestView  extends ActivityGroup implements OnClickListener{
 				tv_Discover.setAlpha(0.5f);
 				btn1.setAlpha(1f);
 				tv_Qrcode.setAlpha(1f);
-			}		
+			}
 			break;
 		}
 
@@ -242,6 +262,114 @@ public class TestView  extends ActivityGroup implements OnClickListener{
             return 0;
         }
     }
+//
+//
+//	public void requestPermission(){
+//		//判断当前Activity是否已经获得了该权限
+//		if (ContextCompat.checkSelfPermission(this,
+//				Manifest.permission.CAMERA)
+//				!= PackageManager.PERMISSION_GRANTED) {
+//
+//			//如果App的权限申请曾经被用户拒绝过，就需要在这里跟用户做出解释
+//			if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+//					Manifest.permission.CAMERA)) {
+//				Toast.makeText(this,"please give me the permission",Toast.LENGTH_SHORT).show();
+//			} else {
+//				//进行权限请求
+//				ActivityCompat.requestPermissions(this,
+//						new String[]{Manifest.permission.CAMERA},
+//						0);
+//			}
+//
+//		}else{
+//
+//		}
+//	}
+//
+//	@Override
+//	public void onRequestPermissionsResult(int requestCode,
+//										   String permissions[], int[] grantResults) {
+//		switch (requestCode) {
+//			case 0: {
+//				// 如果请求被拒绝，那么通常grantResults数组为空
+//				if (grantResults.length > 0
+//						&& grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//					//申请成功，进行相应操作
+//
+//				} else {
+//					//申请失败，可以继续向用户解释。
+//					requestPermission();
+//				}
+//				return;
+//			}
+//		}
+//	}
+	/**
+	 * 判断摄像头是否可用
+	 * 主要针对6.0 之前的版本，现在主要是依靠try...catch... 报错信息，感觉不太好，
+	 * 以后有更好的方法的话可适当替换
+	 *
+	 * @return
+	 */
+	public static boolean isCameraCanUse() {
+		boolean canUse = true;
+		Camera mCamera = null;
+		try {
+			mCamera = Camera.open();
+			// setParameters 是针对魅族MX5 做的。MX5 通过Camera.open() 拿到的Camera
+			// 对象不为null
+			Camera.Parameters mParameters = mCamera.getParameters();
+			mCamera.setParameters(mParameters);
+		} catch (Exception e) {
+			canUse = false;
+		}
+		if (mCamera != null) {
+			mCamera.release();
+		}
+		return canUse;
+	}
+	/**
+	 * Create a pop-up prompt after the camera permissions are not rejected
+	 */
+	private void createPermissionDialog(){
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//		builder.setTitle("shexiangtou");
+		builder.setMessage("Camera permissions are turned off, please first open the permissions.");
+		builder.setNegativeButton("seting", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				getAppDetailSettingIntent(TestView.this);
+				dialog.dismiss();
+				finish();
+			}
+		});
+		builder.setPositiveButton("cancel", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.dismiss();
+				finish();
+			}
+		});
+		builder.setCancelable(false);//设置点击空白处不消失
+		AlertDialog dialog = builder.create();
+		dialog.show();
+	}
+	/**
+	 * 跳转到权限设置界面
+	 */
+	private void getAppDetailSettingIntent(Context context){
+		Intent intent = new Intent();
+		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		if(Build.VERSION.SDK_INT >= 9){
+			intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+			intent.setData(Uri.fromParts("package", getPackageName(), null));
+		} else if(Build.VERSION.SDK_INT <= 8){
+			intent.setAction(Intent.ACTION_VIEW);
+			intent.setClassName("com.android.settings","com.android.settings.InstalledAppDetails");
+			intent.putExtra("com.android.settings.ApplicationPkgName", getPackageName());
+		}
+		startActivity(intent);
+	}
 }
 
 

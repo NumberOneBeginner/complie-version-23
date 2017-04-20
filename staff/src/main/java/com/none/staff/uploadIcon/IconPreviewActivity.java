@@ -103,15 +103,6 @@ public class IconPreviewActivity extends BaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		if (Build.VERSION.SDK_INT >= 21) {
-//			full(false);
-//			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//		} else {
-//			// 除去状态栏
-//			getWindow().addFlags(
-//					WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-//			this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//		}
 		setContentView(R.layout.activity_icon_preview);
 		init();
 	}
